@@ -1,0 +1,37 @@
+initialisointi
+1. luo kansio c:/react/itlogger
+2. aja tuossa kansiossa npx create-react-app
+3. aja tuossa kansiossa jsonserverin ja concurrentlyn asennus:
+   npm i -D json-server concurrently 
+   -D tarkoittaa devDependencies
+
+json-serverin konfigurointi:
+1. luo juureen file db.json
+sinne sisällöksi json, jossa keyt "logs" ja "techs", jotka ovat siis arrayt. Näiden sisälle json muotoiset mallidatat.
+2. Konfiguroidaan script, joka kertoo mitä filea jsonserver käyttää ja missä portissa sen endpoint:
+2.a: packages.json-tiedoston scripts-osioon:
+"json-server":"json-server --watch db.json --port 5000"
+
+concurrentlyn konfigurointi:
+1. packagers-json-tiedostoon scripts-osioon:
+"dev":"concurrently \"npm start\" \"npm run json-server\"",
+2. näin ollen appi käynnistyy ajamalla komento "npm run dev"
+
+proxyn konfigurointi ettei tarvitse kirjoittaa clienttiin localhost yms...
+1. packages.json-tiedostoon uusi key "proxy":
+"proxy": "http://localhost:5000"
+
+
+
+Materializen asennus ja initialisointi:
+1: asennetaan käyttäen npm:
+npm i materialize-css
+2: importit (app.js):
+import 'materialize-css/dist/css/materialize.min.css'
+import M from 'materialize-css/dist/js/materialize.min.js'
+3. Materializen toiminnot, ainakin modal pitää initialisoida. Yksinkertaisin vaihtoehto on käyttää
+auto init-toimintoa,
+  3.a: app.js tuodaan useEffect
+  3.b: app.js:ssä useEffectin sisällä ajetaan funktio M.autoInit();
+4. Ikonit initialisoidaan kopioimalla linkki index.html-tiedostoon dokumentaatiosta
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
