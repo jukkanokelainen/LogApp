@@ -1,37 +1,45 @@
 {
   "logs": [
     {
-      "id": "1",
-      "message": "hard drive broken",
-      "attention": "false",
-      "tech": "Matt",
-      "date": "03-09-2021 21:00:00.000"
+      "message": "VideoWall flickering",
+      "tech": "Matt Handspond",
+      "attention": false,
+      "id": 3
     },
     {
-      "id": "2",
-      "message": "screen broken",
-      "attention": "true",
-      "tech": "Sam",
-      "date": "04-09-2021 21:00:00.000"
+      "id": 4,
+      "message": "Creating outage report was extremely slow in DMS",
+      "attention": true,
+      "tech": "Joe Biden",
+      "date": "Fri Sep 03 2021 18:33:44 GMT+0300 (Eastern European Summer Time)"
     },
     {
-      "id": "3",
-      "message": "videoWall drive broken",
-      "attention": "false",
-      "tech": "Matti",
-      "date": "03-09-2021 21:00:00.000"
+      "message": "test",
+      "tech": "Matt Handspond",
+      "attention": false,
+      "id": 5
     }
   ],
   "techs": [
     {
-      "id": "1",
-      "firstName": "Matt",
-      "lastName": "Smith"
+      "firstName": "Joe",
+      "lastName": "Biden",
+      "id": 1
     },
     {
-      "id": "2",
+      "firstName": "Matt",
+      "lastName": "Handspond",
+      "id": 2
+    },
+    {
       "firstName": "Sam",
-      "lastName": "Obama"
+      "lastName": "Smith",
+      "id": 3
+    },
+    {
+      "firstName": "Sanna",
+      "lastName": "Autio",
+      "id": 5
     }
   ]
 }

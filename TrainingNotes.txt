@@ -35,3 +35,33 @@ auto init-toimintoa,
   3.b: app.js:ssä useEffectin sisällä ajetaan funktio M.autoInit();
 4. Ikonit initialisoidaan kopioimalla linkki index.html-tiedostoon dokumentaatiosta
  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+REDUX
+npm i redux react-redux redux-thunk redux-devtools-extension
+react-redux auttaa yhdistämään reduxin reactiin
+redux-thunk on middleware, jolla voidaan tehdä asynkronisia toimenpiteitä.
+jotta voi käyttää devtoolsia, se pitää implementoida koodissa. readux-devtools-
+extensio auttaa tuon implementoinnissa.
+
+file structure:
+src-kansioon file store.js
+
+import {createStore, applyMiddleware} from 'redux'
+import {composeWithDevTools} from 'redux-devtools-extension'
+...etc
+
+CONNECT COMPONENT TO REDUX
+tuodaan componenttiin import connect from react-redux
+exportissa käytetään connect ja 
+mapstatetoProps jolla saadaan staten sisältö käyttöön componentein propsiin.
+Lisäksi toiseksi conncetin parametriksi laitetaan actionit, jotka halutaan tuoda
+componentin propseihin. ko. action pitää importata käyttöön ensin.
+Sitten componentin sisällä näitä staten osia tai actioneita voidaan käyttää
+esim props.getLogs, props.log.logs:
+
+const mapStateToProps = state => ({
+  log: state.log 
+})
+
+export default connect(mapStateToProps, {getLogs})(Logs)
